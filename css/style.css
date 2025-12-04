@@ -3,6 +3,12 @@ html {
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
   height: 100%;
+  -webkit-overflow-scrolling: touch;
+  overflow-x: hidden;
+}
+body {
+  overflow-x: hidden;
+  touch-action: pan-y;
 }
 article,
 aside,
@@ -2103,6 +2109,7 @@ h5 {
   -webkit-align-items: center;
   -ms-flex-align: center;
   align-items: center;
+  touch-action: pan-x;
 }
 .p-grid.scroller {
   position: absolute;
@@ -2466,6 +2473,13 @@ h5 {
   bottom: 6vh;
   width: 8vh;
   height: 8vh;
+}
+/* Hide sound button on mobile */
+@media screen and (max-width: 991px) {
+  .sound,
+  .sound.soundtoggler {
+    display: none !important;
+  }
 }
 .nav-trigger {
   position: absolute;
@@ -5286,10 +5300,29 @@ html.w-mod-js [data-ix="text-0-2"] {
     right: 0;
     bottom: 0;
     height: 100%;
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+  }
+  .p-grid {
+    width: auto;
+    height: 100%;
+    flex-wrap: nowrap;
   }
   .p-col.pagelink {
-    width: 39vh;
-    height: 78vh;
+    width: 85vw;
+    height: 85vh;
+    min-width: 85vw;
+    flex-shrink: 0;
+    margin-right: 5vw;
+  }
+  .p-numb {
+    font-size: 40vh;
+    line-height: 35vh;
+  }
+  .p-client {
+    font-size: 8vh;
+    line-height: 7vh;
   }
   .contact {
     height: auto;
@@ -6109,15 +6142,33 @@ html.w-mod-js [data-ix="text-0-2"] {
     top: 0;
     right: 0;
     bottom: 0;
-    width: 200vh;
+    width: auto;
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+  }
+  .p-grid {
+    width: auto;
+    height: 100%;
+    flex-wrap: nowrap;
   }
   .p-col.pagelink {
-    width: 40vh;
-    height: 67vh;
+    width: 90vw;
+    height: 80vh;
+    min-width: 90vw;
+    flex-shrink: 0;
+    margin-right: 5vw;
   }
   .p-numb {
-    font-size: 55vh;
-    line-height: 39vh;
+    font-size: 35vh;
+    line-height: 30vh;
+  }
+  .p-client {
+    font-size: 6vh;
+    line-height: 5vh;
+  }
+  .p-block {
+    margin-top: 3vh;
   }
   .p-block {
     margin-top: 2vh;
